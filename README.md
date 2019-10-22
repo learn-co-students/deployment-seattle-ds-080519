@@ -2,7 +2,7 @@
 
 ## SWBATs
  - [x] Explain the purpose of deploying a machine learning model
- - [x] Understand the purpose of pickling a model
+ - [x] Understand the purpose of [pickling a model](https://github.com/learn-co-students/deployment-seattle-ds-080519/blob/master/pickling.ipynb)
  - [x] Understand the basics of some popular deployment techniques
     - Full-stack web application
     - Cloud function
@@ -28,6 +28,10 @@ There are two main ways I recommend deploying a Flask app: Heroku, or AWS EC2.  
  - Learning curve for all of Flask can be steep
  - More systems administration work than a cloud function or ML model
  - Less realistic workflow (unless you are the only technical person on your team, you will probably not be expected to set up a web server)
+ 
+### Documentation
+ - [Flask app repo from 0624 cohort](https://github.com/learn-co-students/capstone-flask-app-template-seattle-ds-062419)
+ - [Flask quickstart documentation](https://flask.palletsprojects.com/en/1.1.x/quickstart/)
 
 ## Cloud Function Example: Google Cloud Functions
 Google Cloud Functions allow you to make a single function that can be called from a REST API interface.  The Python language versions are actually running on top of Flask, with as much boilerplate removed as possible.  So you still need to learn some Flask to be able to get everything working.
