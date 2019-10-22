@@ -12,7 +12,7 @@
 ## Full-Stack Web Application Example: Flask
 Flask means developing a full-stack web application.  It follows a model-view-controller (MVC) pattern and requires that you sometimes have to follow a "convention over configuration" pattern and put certain files in certain folders.
 
-There are two main ways I recommend deploying a Flask app: Heroku, or AWS EC2.  The main difference is that Heroku uses "dynos", a type of container that gets fully re-created when the site is "woken up" based on certain config files it finds in a GitHub repo.  EC2 is more like a "real" computer, where you can SSH in and download things, log out, log back in, and those things will still be there.  EC2 gives you more configuration capabilities and more computational power, but also requires more setup than Heroku.
+There are two main ways I recommend deploying a Flask app: [Heroku](https://devcenter.heroku.com/articles/deploying-python), or [AWS EC2](https://www.codementor.io/dushyantbgs/deploying-a-flask-application-to-aws-gnva38cf0).  The main difference is that Heroku uses "dynos", a type of container that gets fully re-created when the site is "woken up" based on certain config files it finds in a GitHub repo.  EC2 is more like a "real" computer, where you can SSH in and download things, log out, log back in, and those things will still be there.  EC2 gives you more configuration capabilities and more computational power, but also requires more setup than Heroku.
 
 ### Pricing
 [Heroku free tier](https://www.heroku.com/pricing) allows one web app for free.  [AWS free tier](https://aws.amazon.com/ec2/pricing/) allows 750 hours of "micro" level server time per month.
@@ -83,3 +83,19 @@ It looks like there is no free tier for this service.  [Pricing summary here.](h
 1. [Exporting models for prediction](https://cloud.google.com/ml-engine/docs/exporting-for-prediction)
 2. [Deploying models](https://cloud.google.com/ml-engine/docs/deploying-models)
 3. [Getting online predictions in Python](https://cloud.google.com/ml-engine/docs/online-predict), [Getting online predictions via REST](https://cloud.google.com/ml-engine/docs/v1/predict-request)
+
+## Other Examples
+These particular tools are the ones that I happen to be most familiar with, but there are other options you might want to consider
+
+**Full-Stack Web Development**
+ - If you really want to dive into full-stack web development, [Django](https://www.djangoproject.com/start/) has more features than Flask
+ - Besides Heroku and AWS EC2, you can also host websites with [Azure App Service](https://docs.microsoft.com/en-us/learn/modules/host-a-web-app-with-azure-app-service/index), [DigitalOcean](https://www.digitalocean.com/community/tutorials/how-to-deploy-a-flask-application-on-an-ubuntu-vps), [Google Cloud App Engine](https://cloud.google.com/python/getting-started/hello-world), [AWS Elatic Beanstalk](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/Welcome.html)
+ 
+**Cloud Functions**
+ - [AWS Lambda Functions](https://docs.aws.amazon.com/lambda/latest/dg/python-programming-model.html)
+ - [Azure Functions](https://docs.microsoft.com/en-us/azure/azure-functions/functions-create-first-function-python)
+ 
+**ML-Specific Deployment**
+ - [IBM Watson Studio](https://dataplatform.cloud.ibm.com/docs/content/wsj/analyze-data/pm_service_supported_frameworks.html)  (kind of a mixture between a cloud function and ML-specific deployment)
+ - [AWS SageMaker](https://docs.aws.amazon.com/sagemaker/latest/dg/whatis.html)
+ - [Azure Machine Learning](https://docs.microsoft.com/en-us/python/api/overview/azure/ml/intro?view=azure-ml-py )
