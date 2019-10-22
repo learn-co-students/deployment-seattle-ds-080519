@@ -1,12 +1,15 @@
 # Deployment
 
 ## SWBATs
- - [ ] Explain the purpose of deploying a machine learning model
- - [ ] Understand the purpose of pickling a model
- - [ ] Understand the basics of some popular deployment techniques
- - [ ] Start formulating a deployment plan for their business case
+ - [x] Explain the purpose of deploying a machine learning model
+ - [x] Understand the purpose of pickling a model
+ - [x] Understand the basics of some popular deployment techniques
+    - Full-stack web application
+    - Cloud function
+    - ML-specific deployment
+ - [x] Start formulating a deployment plan for their business case
 
-## Flask
+## Full-Stack Web Application Example: Flask
 Flask means developing a full-stack web application.  It follows a model-view-controller (MVC) pattern and requires that you sometimes have to follow a "convention over configuration" pattern and put certain files in certain folders.
 
 There are two main ways I recommend deploying a Flask app: Heroku, or AWS EC2.  The main difference is that Heroku uses "dynos", a type of container that gets fully re-created when the site is "woken up" based on certain config files it finds in a GitHub repo.  EC2 is more like a "real" computer, where you can SSH in and download things, log out, log back in, and those things will still be there.  EC2 gives you more configuration capabilities and more computational power, but also requires more setup than Heroku.
@@ -24,8 +27,9 @@ There are two main ways I recommend deploying a Flask app: Heroku, or AWS EC2.  
 ### Cons
  - Learning curve for all of Flask can be steep
  - More systems administration work than a cloud function or ML model
+ - Less realistic workflow (unless you are the only technical person on your team, you will probably not be expected to set up a web server)
 
-## Google Cloud Functions
+## Cloud Function Example: Google Cloud Functions
 Google Cloud Functions allow you to make a single function that can be called from a REST API interface.  The Python language versions are actually running on top of Flask, with as much boilerplate removed as possible.  So you still need to learn some Flask to be able to get everything working.
 
 ### Pricing
@@ -54,8 +58,8 @@ I have a working example of a Google Cloud function in the `google_cloud_functio
 curl -X POST -H "Content-type: application/json" -d '{"Alcohol": 12.82, "Malic acid": 3.37, "Ash": 2.3, "Alcalinity of ash": 19.5, "Magnesium": 88.0, "Total phenols": 1.48, "Flavanoids": 0.66, "Nonflavanoid phenols": 0.4, "Proanthocyanins": 0.97, "Color intensity": 10.26, "Hue": 0.72, "OD280/OD315 of diluted wines": 1.75, "Proline": 685.0}' https://us-central1-splendid-petal-256700.cloudfunctions.net/wine-predictor
 ```
 
-## Google Cloud AI Platform
-Google Cloud AI Platform allows you to upload an exported model to the cloud, then make future requests to the cloud to make new predictions.  The primary use case seems to be people who are already very integrated into the Google Cloud ecosystem, since they encourage requesting predictions through their custom SDK rather than through a standard REST API interface.
+## ML-Specific Deployment Example: Google Cloud AI Platform
+Google Cloud AI Platform allows you to upload an exported model to the cloud, then make future requests to the cloud to make new predictions.  The primary use case seems to be people who are already very integrated into the Google Cloud ecosystem, since they encourage requesting predictions through their custom SDK in Python rather than through a standard REST API interface.
 
 ### Pricing
 It looks like there is no free tier for this service.  [Pricing summary here.](https://cloud.google.com/ml-engine/docs/pricing)
@@ -63,7 +67,7 @@ It looks like there is no free tier for this service.  [Pricing summary here.](h
 ### Pros
  - After installing their CLI, you only need to upload the model itself, no additional libraries or frameworks
  - If you need better performance, it's easy to pay more money to get that
- - This is a "real" tool that you might encounter on the job
+ - This is a "real" tool that you might encounter on the job, and resembles most closely the type of systems administration you might need to do on the job
  - If you need to use TensorFlow, Google made both TensorFlow and this product, so they're likely to be the most compatible
 
 ### Cons
